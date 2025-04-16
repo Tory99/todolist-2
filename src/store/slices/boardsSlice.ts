@@ -1,4 +1,3 @@
-import { Droppable } from 'react-beautiful-dnd';
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IBoard, IList, ITask } from "../../types";
 
@@ -214,7 +213,7 @@ const boardSlice = createSlice({
                     list => list.listId === payload.droppableIdStart
                 )
 
-                const card = listStart?.tasks.splice(payload.droppableIndexStart, 1);
+                const card = listStart!.tasks.splice(payload.droppableIndexStart, 1);
                 const listEnd = state.boardArray[payload.boardIndex].lists.find(
                     list => list.listId === payload.droppableIdEnd
                 )

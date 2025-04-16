@@ -55,6 +55,7 @@ function App() {
     }
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleDragEnd = (result: any) => {
     const { destination, source, draggableId } = result;
 

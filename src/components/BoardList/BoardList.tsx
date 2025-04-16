@@ -4,7 +4,6 @@ import { FiLogIn, FiPlusCircle } from "react-icons/fi";
 import SideForm from "./SideForm/SideForm";
 import {container,title, addButton, addSection, boardItemActive,boardItem} from './BoardList.css.ts';
 import clsx from "clsx";
-import { useRef } from "react";
 import { GoSignOut } from "react-icons/go";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 import { app } from "../../firebase.ts";
@@ -23,7 +22,6 @@ const BoardList: FC<TBoardListProps> = ({
 
     const { boardArray } = useTypedSelector(state => state.board);
     const [isFormOpen, setIsFormOpen] = useState(false);
-    const inputRef = useRef<HTMLInputElement>(null);
     const dispatch = useTypedDispatch();
 
     const auth = getAuth(app);
@@ -62,7 +60,6 @@ const BoardList: FC<TBoardListProps> = ({
 
     const handleClick = () => {
         setIsFormOpen(!isFormOpen);
-        inputRef.current?.focus();
     }
 
     return (
@@ -89,7 +86,7 @@ const BoardList: FC<TBoardListProps> = ({
             <div className={addSection}>
                 {
                     isFormOpen ? 
-                      <SideForm inputRef={inputRef} setIsFormOpen={setIsFormOpen}/> 
+                      <SideForm setIsFormOpen={setIsFormOpen}/> 
                       :
                       <FiPlusCircle className={addButton} onClick={handleClick}/>
                 }

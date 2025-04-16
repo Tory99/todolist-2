@@ -10,7 +10,6 @@ import { addLog } from "../../../store/slices/loggerSlice";
 
 
 type TSideFormProps = {
-    inputRef : React.RefObject<HTMLInputElement>;
     setIsFormOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 

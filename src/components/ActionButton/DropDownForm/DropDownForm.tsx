@@ -1,4 +1,4 @@
-import React, { ChangeEvent, Dispatch, FC, SetStateAction, useState } from "react";
+import { ChangeEvent, Dispatch, FC, SetStateAction, useState } from "react";
 import { useTypedDispatch } from "../../../hooks/redux";
 import { addList, addTask } from "../../../store/slices/boardsSlice";
 import { v4 } from "uuid";
