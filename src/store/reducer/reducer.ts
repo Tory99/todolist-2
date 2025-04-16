@@ -1,4 +1,4 @@
-import { boardReducer } from "../slices/boradsSlice";
+import { boardReducer } from "../slices/boardsSlice";
 import { loggerReduce } from "../slices/loggerSlice";
 import { modalReducer } from "../slices/modalSlice";
 
