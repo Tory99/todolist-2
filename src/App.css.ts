@@ -78,7 +78,7 @@ export const deleteBoardButton = style({
     ":hover": {
         opacity: 0.8
     }
-})
+});
 
 export const loggerButton = style({
     border: 'none',
