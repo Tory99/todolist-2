@@ -1,6 +1,6 @@
 import { FC } from "react";  
 import { container, description, title } from "./Task.css";
-import { Draggable } from "react-beautiful-dnd";
+import { Draggable } from "@hello-pangea/dnd";
 
 type TTaskProps = {
     index: number;

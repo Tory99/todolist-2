@@ -9,7 +9,7 @@ import LoggerModal from './components/LoggerModal/LoggerModal.tsx';
 import { deleteBoard, sort } from './store/slices/boardsSlice.ts';
 import { v4 } from 'uuid';
 import { addLog } from './store/slices/loggerSlice.ts';
-import { DragDropContext } from 'react-beautiful-dnd';
+import { DragDropContext } from '@hello-pangea/dnd';
 
 function App() {
   const dispatch = useTypedDispatch();

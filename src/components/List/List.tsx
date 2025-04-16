@@ -9,7 +9,7 @@ import { v4 } from "uuid";
 import { addLog } from "../../store/slices/loggerSlice";
 import { setModalData } from "../../store/slices/modalSlice";
 import { deleteButton, header, listname, listWrapper } from "./List.css";
-import { Droppable } from "react-beautiful-dnd";
+import { Droppable } from '@hello-pangea/dnd';
 
 type TListProps ={
     boardId: string,
@@ -18,7 +18,7 @@ type TListProps ={
 
 const List: FC<TListProps> = ({
     list,
-    boardId
+    boardId 
 }) => {
     const dispatch = useTypedDispatch();
 
