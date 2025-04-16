@@ -22,7 +22,7 @@ const DropDownForm: FC<TDropDownFormProps> = ({
     const [text, settext] = useState('');
     const formPlaceholder = list? "리스트의 제목을 입력하세요": "일의 제목을 입력하세요.";
     const buttonTitle = list? "리스트 추가하기" : "일 추가하기";
-    const dispath = useTypedDispatch();
+    const dispatch = useTypedDispatch();
 
     const handleTextChange = (e:ChangeEvent<HTMLTextAreaElement>) =>{
         settext(e.target.value);
@@ -31,13 +31,13 @@ const DropDownForm: FC<TDropDownFormProps> = ({
     const handleButtonClick = () => {
         if(text){
             if(list){
-                dispath(
+                dispatch(
                     addList({
                         boardId,
                         list: {listId: v4(), listName: text, tasks: []}
                     })
                 );
-                dispath(
+                dispatch(
                     addLog({
                         logId: v4(),
                         logMessage: `리스트 생성하기: ${text}`,
@@ -46,7 +46,7 @@ const DropDownForm: FC<TDropDownFormProps> = ({
                     })
                 );
             } else {    
-                dispath(
+                dispatch(
                     addTask({
                         boardId,
                         listId,
@@ -58,7 +58,7 @@ const DropDownForm: FC<TDropDownFormProps> = ({
                         }
                     })
                 );
-                dispath(
+                dispatch(
                     addLog({
                         logId: v4(),
                         logMessage: `일 생성하기: ${text}`,
